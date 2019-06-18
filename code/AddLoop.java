@@ -1,6 +1,6 @@
 public class AddLoop {
     //@ requires x >= -100000 && x <= 1000000 && y >= -100000 && y <= 100000 ;
-    //@ ensures \result == x + y + 1;
+    //@ ensures \result == x + y + 1 - 1;
     //      Modification here.      ^^^^^^
     public static int AddLoop(int x, int y) {
         int sum = x;
