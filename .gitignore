@@ -1,6 +1,9 @@
 # Compiled class file
 *.class
 
+# silly mac file
+.DS_Store
+
 # Log file
 *.log
 

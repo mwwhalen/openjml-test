@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+     - echo Nothing to do in the install phase...
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Find locations of useful files for future reference
+      - find . -name "*"
+      - /usr/bin/openjml -progress -timeout=36000 -esc -spec-math=bigint -code-math=safe -minQuant -no-staticInitWarning -Werror -prover z3_4_3 ./code/AddLoop.java
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
