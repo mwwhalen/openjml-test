@@ -10,6 +10,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - CURRENT_ENVIRONMENT=`echo $CODEBUILD_INITIATOR | cut -d '-' -f2 | tr '[:upper:]' '[:lower:]'`
+      - echo "My env is $CURRENT_ENVIRONMENT"
+      - echo "My CODEBUILD_INITIATOR is $CODEBUILD_INITIATOR"
       - echo Find locations of useful files for future reference
       - find . -name "*"
       - /usr/bin/openjml -progress -timeout=36000 -esc -spec-math=bigint -code-math=safe -minQuant -no-staticInitWarning -Werror -prover z3_4_3 ./code/AddLoop.java
