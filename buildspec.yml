@@ -16,5 +16,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - touch ./sample_output.txt
 artifacts:
   files:
+    - ./sample_output.txt
